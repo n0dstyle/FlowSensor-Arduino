@@ -1,10 +1,10 @@
 /**
  * @file FlowSensor.h
  * @author Hafidh Hidayat (hafidhhidayat@hotmail.com)
- * @brief 
- * 
+ * @brief
+ *
  * @copyright Copyright (c) 2022
- * 
+ *
  * Github :
  * https://github.com/hafidhh
  * https://github.com/hafidhh/FlowSensor-Arduino
@@ -46,6 +46,7 @@ public:
   float getFlowRate_m();
   float getFlowRate_s();
   float getVolume();
+  void clearAll();
 };
 
 #endif

@@ -1,10 +1,10 @@
 /**
  * @file FlowSensor.cpp
  * @author Hafidh Hidayat (hafidhhidayat@hotmail.com)
- * @brief 
- * 
+ * @brief
+ *
  * @copyright Copyright (c) 2022
- * 
+ *
  * Github :
  * https://github.com/hafidhh
  * https://github.com/hafidhh/FlowSensor-Arduino
@@ -15,9 +15,9 @@
 
 /**
  * @brief Construct a new FlowSensor::FlowSensor object
- * 
- * @param type 
- * @param pin 
+ *
+ * @param type
+ * @param pin
  */
 FlowSensor::FlowSensor(uint8_t type ,uint8_t pin)
 {
@@ -40,15 +40,15 @@ FlowSensor::FlowSensor(uint8_t type ,uint8_t pin)
   case OF05ZAT:
     _pulse1liter = 2174;
     break;
-  
+
   default:
     break;
   }
 }
 
 /**
- * @brief 
- * 
+ * @brief
+ *
  * @return uint8_t pin
  */
 uint8_t FlowSensor::getPin()
@@ -57,8 +57,8 @@ uint8_t FlowSensor::getPin()
 }
 
 /**
- * @brief 
- * 
+ * @brief
+ *
  * @return uint8_t sensor type
  */
 uint8_t FlowSensor::getType()
@@ -68,7 +68,7 @@ uint8_t FlowSensor::getType()
 
 /**
  * @brief count pulse
- * 
+ *
  */
 void FlowSensor::count()
 {
@@ -77,9 +77,9 @@ void FlowSensor::count()
 }
 
 /**
- * @brief 
- * 
- * @param userFunc 
+ * @brief
+ *
+ * @param userFunc
  */
 void FlowSensor::begin(void (*userFunc)(void))
 {
@@ -90,8 +90,8 @@ void FlowSensor::begin(void (*userFunc)(void))
 
 /**
  * @brief
- * 
- * @param calibration 
+ *
+ * @param calibration
  */
 void FlowSensor::read(int calibration)
 {
@@ -101,8 +101,20 @@ void FlowSensor::read(int calibration)
 }
 
 /**
- * @brief 
- * 
+ * @brief
+ *
+ * @param calibration
+ */
+void FlowSensor::clearAll()
+{
+  this->_totalpulse = 0;
+  this->_pulse = 0;
+  this->_volume = 0;
+}
+
+/**
+ * @brief
+ *
  * @return int total pulse
  */
 int FlowSensor::getPulse()
@@ -111,8 +123,8 @@ int FlowSensor::getPulse()
 }
 
 /**
- * @brief 
- * 
+ * @brief
+ *
  * @return float flow rate / minute
  */
 float FlowSensor::getFlowRate_m()
@@ -122,8 +134,8 @@ float FlowSensor::getFlowRate_m()
 }
 
 /**
- * @brief 
- * 
+ * @brief
+ *
  * @return float flow rate / secound
  */
 float FlowSensor::getFlowRate_s()
@@ -132,8 +144,8 @@ float FlowSensor::getFlowRate_s()
 }
 
 /**
- * @brief 
- * 
+ * @brief
+ *
  * @return float volume
  */
 float FlowSensor::getVolume()
